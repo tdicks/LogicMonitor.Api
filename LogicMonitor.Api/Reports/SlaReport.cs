@@ -9,7 +9,6 @@ namespace LogicMonitor.Api.Reports
 	[DataContract]
 	public class SlaReport : DateRangeReport
 	{
-
 		/// <summary>
 		/// The calculation method
 		/// </summary>

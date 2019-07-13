@@ -11,7 +11,7 @@ namespace LogicMonitor.Api.Dashboards
 	[DataContract]
 	public class NetflowFilter
 	{
-		private string _direction = "bidirectional";
+		private string direction = "bidirectional";
 
 		/// <summary>
 		/// The ifIdx
@@ -43,19 +43,19 @@ namespace LogicMonitor.Api.Dashboards
 		[DataMember(Name = "direction")]
 		public string Direction
 		{
-			get => _direction;
+			get => direction;
 			set
 			{
 				switch (value)
 				{
 					case "":
-						_direction = "bidirectional";
+						direction = "bidirectional";
 						break;
 
 					case "bidirectional":
 					case "leftwards":
 					case "rightwards":
-						_direction = value;
+						direction = value;
 						break;
 
 					default:
