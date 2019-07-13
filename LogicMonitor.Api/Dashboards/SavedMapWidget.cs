@@ -38,5 +38,4 @@ namespace LogicMonitor.Api.Dashboards
 		[DataMember(Name = "savedMapGroupName")]
 		public string SavedMapGroupName { get; set; }
 	}
-
 }

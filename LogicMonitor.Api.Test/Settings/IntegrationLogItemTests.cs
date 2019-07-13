@@ -8,7 +8,6 @@ using Xunit.Abstractions;
 
 namespace LogicMonitor.Api.Test.Settings
 {
-
 	public class IntegrationLogItemTests : TestWithOutput
 	{
 		public IntegrationLogItemTests(ITestOutputHelper iTestOutputHelper) : base(iTestOutputHelper)

@@ -32,5 +32,4 @@ namespace LogicMonitor.Api.Collectors
 		[DataMember(Name = "inSDT")]
 		public bool InSdt { get; set; }
 	}
-
 }
