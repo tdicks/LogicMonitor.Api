@@ -153,6 +153,12 @@ namespace LogicMonitor.Api.Settings
 		public bool RequireTwoFactorAuthentication { get; set; }
 
 		/// <summary>
+		///     The saved map count
+		/// </summary>
+		[DataMember(Name = "numOfSavedMaps")]
+		public int SavedMapCount { get; set; }
+
+		/// <summary>
 		///     The service count
 		/// </summary>
 		[DataMember(Name = "numOfServices")]

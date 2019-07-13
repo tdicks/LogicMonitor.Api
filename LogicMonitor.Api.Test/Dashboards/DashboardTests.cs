@@ -43,7 +43,7 @@ namespace LogicMonitor.Api.Test.Dashboards
 			var widgets = await PortalClient.GetWidgetsByDashboardNameAsync("All Widgets").ConfigureAwait(false);
 			Assert.NotNull(dashboard);
 			Assert.NotNull(widgets);
-			Assert.Equal(19, widgets.Count); // There are 24 different types of widget
+			Assert.Equal(20, widgets.Count); // There are 24 different types of widget
 
 			// Test each type
 

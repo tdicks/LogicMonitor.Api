@@ -13,6 +13,12 @@ namespace LogicMonitor.Api.Users
 	public class User : IdentifiedItem, IHasEndpoint
 	{
 		/// <summary>
+		///    The admin group Ids
+		/// </summary>
+		[DataMember(Name = "adminGroupIds")]
+		public List<int> AdminGroupIds { get; set; }
+
+		/// <summary>
 		///    Whether this user is for API use only
 		/// </summary>
 		[DataMember(Name = "apionly")]
@@ -179,6 +185,12 @@ namespace LogicMonitor.Api.Users
 		/// </summary>
 		[DataMember(Name = "timezone")]
 		public string Timezone { get; set; }
+
+		/// <summary>
+		///    The user permission, if any
+		/// </summary>
+		[DataMember(Name = "userPermission")]
+		public RolePrivilegeOperation? UserPermission { get; set; }
 
 		/// <summary>
 		///    The DateTime the user last logged in UTC

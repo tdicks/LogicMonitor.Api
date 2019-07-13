@@ -40,10 +40,10 @@ namespace LogicMonitor.Api.Alerts
 		public FontSize FontSize { get; set; }
 
 		/// <summary>
-		/// The column to sort by
+		/// The column to order by
 		/// </summary>
-		[DataMember(Name = "sortBy")]
-		public string SortBy { get; set; }
+		[DataMember(Name = "sort")]
+		public string OrderBy { get; set; }
 
 		/// <summary>
 		/// The filters

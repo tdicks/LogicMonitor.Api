@@ -21,12 +21,6 @@ namespace LogicMonitor.Api.Users
 		public bool Dashboards { get; set; }
 
 		/// <summary>
-		/// Devices view permission
-		/// </summary>
-		[DataMember(Name = "Hosts")]
-		public bool Devices { get; set; }
-
-		/// <summary>
 		/// Maps view permission
 		/// </summary>
 		[DataMember(Name = "Maps")]
@@ -36,13 +30,13 @@ namespace LogicMonitor.Api.Users
 		/// Whether to use the new UI
 		/// </summary>
 		[DataMember(Name = "NewUI")]
-		public bool? NewUi { get; set; }
+		public bool NewUi { get; set; }
 
 		/// <summary>
-		/// Whether to use the new UI
+		/// Whether to only use the new UI
 		/// </summary>
 		[DataMember(Name = "OnlyNewUI")]
-		public bool? OnlyNewUi { get; set; }
+		public bool OnlyNewUi { get; set; }
 
 		/// <summary>
 		/// Reports view permission
@@ -51,10 +45,10 @@ namespace LogicMonitor.Api.Users
 		public bool Reports { get; set; }
 
 		/// <summary>
-		/// Websites view permission
+		/// Devices view permission
 		/// </summary>
-		[DataMember(Name = "Services")]
-		public bool Websites { get; set; }
+		[DataMember(Name = "Resources")]
+		public bool Resources { get; set; }
 
 		/// <summary>
 		/// Settings view permission
@@ -62,7 +56,13 @@ namespace LogicMonitor.Api.Users
 		[DataMember(Name = "Settings")]
 		public bool Settings { get; set; }
 
+		/// <summary>
+		/// Websites view permission
+		/// </summary>
+		[DataMember(Name = "Websites")]
+		public bool Websites { get; set; }
+
 		/// <inheritdoc />
-		public override string ToString() => $"{nameof(Dashboards)}={Dashboards};{nameof(Reports)}={Reports};{nameof(Websites)}={Websites};{nameof(Settings)}={Settings};{nameof(Devices)}={Devices};{nameof(Alerts)}={Alerts};";
+		public override string ToString() => $"{nameof(Dashboards)}={Dashboards};{nameof(Reports)}={Reports};{nameof(Websites)}={Websites};{nameof(Settings)}={Settings};{nameof(Resources)}={Resources};{nameof(Alerts)}={Alerts};";
 	}
 }

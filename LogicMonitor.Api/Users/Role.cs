@@ -46,6 +46,12 @@ namespace LogicMonitor.Api.Users
 		public string CustomHelpUrl { get; set; }
 
 		/// <summary>
+		///    The RoleGroup Id
+		/// </summary>
+		[DataMember(Name = "roleGroupId")]
+		public int RoleGroupId { get; set; }
+
+		/// <summary>
 		///    The associated user count
 		/// </summary>
 		[DataMember(Name = "associatedUserCount")]
@@ -56,6 +62,12 @@ namespace LogicMonitor.Api.Users
 		/// </summary>
 		[DataMember(Name = "privileges")]
 		public List<RolePrivilege> Privileges { get; set; }
+
+		/// <summary>
+		///    The user permission, if any
+		/// </summary>
+		[DataMember(Name = "userPermission")]
+		public RolePrivilegeOperation? UserPermission { get; set; }
 
 		/// <inheritdoc />
 		public string Endpoint() => "setting/roles";

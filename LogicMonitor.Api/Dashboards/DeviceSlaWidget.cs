@@ -16,6 +16,18 @@ namespace LogicMonitor.Api.Dashboards
 		public string BottomLabel { get; set; }
 
 		/// <summary>
+		/// The calculation method
+		/// </summary>
+		[DataMember(Name = "calculationMethod")]
+		public int CalculationMethod { get; set; }
+
+		/// <summary>
+		/// Whether to display the percentage bar
+		/// </summary>
+		[DataMember(Name = "displayPercentageBar")]
+		public bool DisplayPercentageBar { get; set; }
+
+		/// <summary>
 		/// The metrics
 		/// </summary>
 		[DataMember(Name = "metrics")]

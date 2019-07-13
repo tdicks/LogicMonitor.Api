@@ -1,5 +1,7 @@
+using LogicMonitor.Api.Filters;
 using LogicMonitor.Api.Logs;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
@@ -13,9 +15,11 @@ namespace LogicMonitor.Api.Test.Settings
 		}
 
 		[Fact]
-		public async void Get()
+		public async void GetAll()
 		{
-			var accessLogItems = await PortalClient.GetAllAsync<LogItem>().ConfigureAwait(false);
+			var accessLogItems = await PortalClient
+				.GetAllAsync<LogItem>()
+				.ConfigureAwait(false);
 
 			// Make sure that some are returned
 			Assert.True(accessLogItems.Count > 0);
@@ -27,17 +31,27 @@ namespace LogicMonitor.Api.Test.Settings
 		}
 
 		[Fact]
-		public async void GetPdl()
+		public async void GetLastTwoDays()
 		{
 			const int skip = 0;
 			const int take = 1000;
+			var utcNow = DateTimeOffset.UtcNow;
 			var accessLogItems = await PortalClient
-				.GetLogItemsAsync(new LogFilter(
-					skip,
-					take,
-					DateTime.UtcNow.AddDays(-2),
-					DateTime.UtcNow,
-					LogFilterSortOrder.HappenedOnAsc)).ConfigureAwait(false);
+				.GetAllAsync(new Filter<LogItem>
+				{
+					Skip = skip,
+					Take = take,
+					FilterItems = new List<FilterItem<LogItem>>
+					{
+						new Ge<LogItem>(nameof(LogItem.HappenedOnTimeStampUtc), utcNow.AddDays(-2).ToUnixTimeSeconds()),
+						new Lt<LogItem>(nameof(LogItem.HappenedOnTimeStampUtc), utcNow.ToUnixTimeSeconds())
+					},
+					Order = new Order<LogItem>
+					{
+						Property = nameof(LogItem.HappenedOnTimeStampUtc),
+						Direction = OrderDirection.Asc
+					}
+				}).ConfigureAwait(false);
 
 			// Make sure that some are returned
 			Assert.True(accessLogItems.Count > 0);

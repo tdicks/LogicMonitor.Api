@@ -72,6 +72,9 @@ namespace LogicMonitor.Api.Converters
 				case "websiteoverallstatus":
 					return new WebsiteOverallStatusWidget();
 
+				case "savedmap":
+					return new SavedMapWidget();
+
 				case "sgraph":
 					return new WebsiteGraphWidget();
 

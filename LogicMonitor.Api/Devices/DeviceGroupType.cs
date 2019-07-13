@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace LogicMonitor.Api.Devices
 {
 	/// <summary>
-	///     A device group type
+	///     A resource group type
 	/// </summary>
 	[DataContract]
 	[JsonConverter(typeof(TolerantStringEnumConverter))]

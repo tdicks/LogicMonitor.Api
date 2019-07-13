@@ -38,14 +38,14 @@ namespace LogicMonitor.Api.ScheduledDownTimes
 		/// <summary>
 		/// Device
 		/// </summary>
-		[EnumMember(Value = "DeviceSDT")]
-		Device,
+		[EnumMember(Value = "ResourceSDT")]
+		Resource,
 
 		/// <summary>
 		/// Device Group
 		/// </summary>
-		[EnumMember(Value = "DeviceGroupSDT")]
-		DeviceGroup,
+		[EnumMember(Value = "ResourceGroupSDT")]
+		ResourceGroup,
 
 		/// <summary>
 		/// Collector

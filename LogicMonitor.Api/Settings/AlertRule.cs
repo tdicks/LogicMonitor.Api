@@ -71,6 +71,12 @@ namespace LogicMonitor.Api.Settings
 		public EscalationChain EscalationChain { get; set; }
 
 		/// <summary>
+		/// Resource properties
+		/// </summary>
+		[DataMember(Name = "resourceProperties")]
+		public List<Property> ResourceProperties { get; set; }
+
+		/// <summary>
 		/// Whether to suppress Alert clears
 		/// </summary>
 		[DataMember(Name = "suppressAlertClear")]

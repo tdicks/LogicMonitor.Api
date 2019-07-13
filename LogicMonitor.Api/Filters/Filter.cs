@@ -21,6 +21,11 @@ namespace LogicMonitor.Api.Filters
 		public int Take { get; set; } = int.MaxValue;
 
 		/// <summary>
+		///     The number to take per page
+		/// </summary>
+		public int PageSize { get; set; } = 300;
+
+		/// <summary>
 		///     The order the results should come back
 		/// </summary>
 		public Order<T> Order { get; set; }

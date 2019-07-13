@@ -76,5 +76,11 @@ namespace LogicMonitor.Api.Users
 		/// </summary>
 		[EnumMember(Value = "map")]
 		Map,
+
+		/// <summary>
+		/// Resource map tab
+		/// </summary>
+		[EnumMember(Value = "resourceMapTab")]
+		ResourceMapTab
 	}
 }

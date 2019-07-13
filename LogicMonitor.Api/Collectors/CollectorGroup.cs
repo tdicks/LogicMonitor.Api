@@ -66,6 +66,12 @@ namespace LogicMonitor.Api.Collectors
 		public int AutoBalanceInstanceCountThrehsold { get; set; }
 
 		/// <summary>
+		///    Highest priority collector status
+		/// </summary>
+		[DataMember(Name = "highestPriorityCollectorStatus")]
+		public CollectorStatus HighestPriorityCollectorStatus { get; set; }
+
+		/// <summary>
 		///    Whether the version mismatches
 		/// </summary>
 		[DataMember(Name = "mismatchVerison")]

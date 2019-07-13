@@ -219,7 +219,7 @@ namespace LogicMonitor.Api.Test.ScheduledDownTimes
 
 			var allScheduledDownTimes = await portalClient.GetAllAsync<ScheduledDownTime>().ConfigureAwait(false);
 
-			var deviceId = allScheduledDownTimes.Find(sdt => sdt.Type == ScheduledDownTimeType.Device)?.DeviceId;
+			var deviceId = allScheduledDownTimes.Find(sdt => sdt.Type == ScheduledDownTimeType.Resource)?.DeviceId;
 			Assert.NotNull(deviceId);
 			var filteredScheduledDownTimes = await portalClient.GetAllAsync(new Filter<ScheduledDownTime>
 			{

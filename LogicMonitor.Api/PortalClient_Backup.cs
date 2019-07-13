@@ -5,6 +5,7 @@ using LogicMonitor.Api.Dashboards;
 using LogicMonitor.Api.Devices;
 using LogicMonitor.Api.Filters;
 using LogicMonitor.Api.LogicModules;
+using LogicMonitor.Api.Logs;
 using LogicMonitor.Api.Netscans;
 using LogicMonitor.Api.OpsNotes;
 using LogicMonitor.Api.ScheduledDownTimes;
@@ -210,7 +211,7 @@ namespace LogicMonitor.Api
 			{
 				progressReporter.Notify("Logs\r\n");
 				progressReporter.StartSubTask("- Logs");
-				configurationBackup.LogItems = await GetLogItemsAsync(null, cancellationToken).ConfigureAwait(false);
+				configurationBackup.LogItems = await GetAllAsync<LogItem>(cancellationToken: cancellationToken).ConfigureAwait(false);
 				progressReporter.StopSubTask();
 			}
 

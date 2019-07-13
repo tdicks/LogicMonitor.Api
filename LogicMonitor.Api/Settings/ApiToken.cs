@@ -1,4 +1,5 @@
 using LogicMonitor.Api.Extensions;
+using LogicMonitor.Api.Users;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -70,6 +71,12 @@ namespace LogicMonitor.Api.Settings
 		/// </summary>
 		[DataMember(Name = "lastUsedOn")]
 		public long LastUsedOnSeconds { get; set; }
+
+		/// <summary>
+		///    The user permission, if any
+		/// </summary>
+		[DataMember(Name = "userPermission")]
+		public RolePrivilegeOperation? UserPermission { get; set; }
 
 		/// <summary>
 		///    The DateTime the user accepted the EULA UTC

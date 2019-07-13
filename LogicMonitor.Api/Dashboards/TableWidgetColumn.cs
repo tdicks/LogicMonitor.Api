@@ -43,5 +43,11 @@ namespace LogicMonitor.Api.Dashboards
 		/// </summary>
 		[DataMember(Name = "rpn")]
 		public string Rpn { get; set; }
+
+		/// <summary>
+		///     The unit label
+		/// </summary>
+		[DataMember(Name = "unitLabel")]
+		public string UnitLabel { get; set; }
 	}
 }

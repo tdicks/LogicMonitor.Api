@@ -9,6 +9,13 @@ namespace LogicMonitor.Api.Reports
 	[DataContract]
 	public class SlaReport : DateRangeReport
 	{
+
+		/// <summary>
+		/// The calculation method
+		/// </summary>
+		[DataMember(Name = "calculationMethod")]
+		public int CalculationMethod { get; set; }
+
 		/// <summary>
 		/// The metrics
 		/// </summary>

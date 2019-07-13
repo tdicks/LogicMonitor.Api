@@ -12,61 +12,73 @@ namespace LogicMonitor.Api.Alerts
 		/// The warning count
 		/// </summary>
 		[DataMember(Name = "warns")]
-		public int Warnings { get; set; }
+		public int WarningCount { get; set; }
 
 		/// <summary>
 		/// The error count
 		/// </summary>
 		[DataMember(Name = "errors")]
-		public int Errors { get; set; }
+		public int ErrorCount { get; set; }
 
 		/// <summary>
 		/// The critical count
 		/// </summary>
 		[DataMember(Name = "criticals")]
-		public int Criticals { get; set; }
+		public int CriticalCount { get; set; }
 
 		/// <summary>
 		/// The Website warning count
 		/// </summary>
 		[DataMember(Name = "websiteWarns")]
-		public int WebsiteWarnings { get; set; }
+		public int WebsiteWarningCount { get; set; }
 
 		/// <summary>
 		/// The Website error count
 		/// </summary>
 		[DataMember(Name = "websiteErrors")]
-		public int WebsiteErrors { get; set; }
+		public int WebsiteErrorCount { get; set; }
 
 		/// <summary>
 		/// The Website critical count
 		/// </summary>
 		[DataMember(Name = "websiteCriticals")]
-		public int WebsiteCriticals { get; set; }
+		public int WebsiteCriticalCount { get; set; }
 
 		/// <summary>
 		/// The dead host count
 		/// </summary>
 		[DataMember(Name = "deadhosts")]
-		public int DeadHosts { get; set; }
+		public int DeadDeviceCount { get; set; }
 
 		/// <summary>
 		/// The count of alerts in scheduled down time
 		/// </summary>
 		[DataMember(Name = "sdtAlerts")]
-		public int SdtAlerts { get; set; }
+		public int SdtAlertCount { get; set; }
 
 		/// <summary>
 		/// The total count of alerts
 		/// </summary>
 		[DataMember(Name = "totalAlerts")]
-		public int TotalAlerts { get; set; }
+		public int TotalAlertCount { get; set; }
+
+		/// <summary>
+		/// The total count of alerts, including those in SDT
+		/// </summary>
+		[DataMember(Name = "alertTotalIncludeInSdt")]
+		public bool IsIncludingSdt { get; set; }
+
+		/// <summary>
+		/// The total count of alerts, including those in SDT
+		/// </summary>
+		[DataMember(Name = "alertTotalIncludeInAck")]
+		public bool IsIncludingAcknowledged { get; set; }
 
 		/// <summary>
 		/// The total count of alerts
 		/// </summary>
 		[DataMember(Name = "ackAlerts")]
-		public int AckAlerts { get; set; }
+		public int AcknowledgedAlertCount { get; set; }
 
 		/// <summary>
 		///    The endpoint

@@ -142,7 +142,7 @@ namespace LogicMonitor.Api
 			client.DefaultRequestHeaders.Accept.Clear();
 			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 			client.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
-			client.DefaultRequestHeaders.Add("X-version", "2");
+			client.DefaultRequestHeaders.Add("X-version", "3");
 			client.DefaultRequestHeaders.Add("X-CSRF-Token", "Fetch");
 			client.Timeout = TimeSpan.FromMinutes(1);
 		}
@@ -227,7 +227,7 @@ namespace LogicMonitor.Api
 			{
 				filter = new Filter<T>();
 			}
-			filter.Take = Math.Min(300, originalTake ?? int.MaxValue);
+			filter.Take = Math.Min(filter.PageSize, originalTake ?? int.MaxValue);
 			filter.Skip = 0;
 			var list = new List<T>();
 			while (true)
@@ -244,7 +244,7 @@ namespace LogicMonitor.Api
 				list.AddRange(page.Items);
 
 				// Do we already have all items?
-				if (list.Count >= Math.Min(page.TotalCount, originalTake ?? int.MaxValue))
+				if (page.TotalCount > 0 && list.Count >= Math.Min(page.TotalCount, originalTake ?? int.MaxValue))
 				{
 					// Yes.  Return list.
 					return list;
@@ -262,15 +262,15 @@ namespace LogicMonitor.Api
 			}
 		}
 
-		private void ValidateFilter<T>(Filter<T> filter, int maxTake = 300)
+		private void ValidateFilter<T>(Filter<T> filter)
 		{
 			if (filter.Skip < 0)
 			{
 				throw new ArgumentOutOfRangeException(nameof(filter.Skip), "must be greater than 0");
 			}
-			if (filter.Take < 0 || filter.Take > maxTake)
+			if (filter.Take < 0)
 			{
-				throw new ArgumentOutOfRangeException(nameof(filter.Take), $"must be between 1 and {maxTake}");
+				throw new ArgumentOutOfRangeException(nameof(filter.Take), $"must be greater than 0");
 			}
 		}
 

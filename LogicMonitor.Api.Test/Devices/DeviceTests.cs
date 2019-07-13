@@ -504,13 +504,6 @@ deviceProperty
 		}
 
 		[Fact]
-		public async void GetDeviceById66()
-		{
-			var device = await PortalClient.GetAsync<Device>(66).ConfigureAwait(false);
-			Assert.NotNull(device);
-		}
-
-		[Fact]
 		public async void ScheduleActiveDiscovery66()
 		{
 			await PortalClient.ScheduleActiveDiscovery(66).ConfigureAwait(false);

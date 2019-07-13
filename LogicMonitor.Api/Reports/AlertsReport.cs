@@ -1,3 +1,4 @@
+using LogicMonitor.Api.Filters;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -40,10 +41,16 @@ namespace LogicMonitor.Api.Reports
 		public string Level { get; set; }
 
 		/// <summary>
-		/// The columns to sort by
+		/// The columns to order by
 		/// </summary>
 		[DataMember(Name = "sortedBy")]
 		public string SortedBy { get; set; }
+
+		/// <summary>
+		/// The order direction
+		/// </summary>
+		[DataMember(Name = "sortedDirection")]
+		public OrderDirection OrderDirection { get; set; }
 
 		/// <summary>
 		/// The whether to include pre-existing

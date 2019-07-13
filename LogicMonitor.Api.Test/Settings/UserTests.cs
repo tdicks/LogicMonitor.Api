@@ -49,7 +49,7 @@ namespace LogicMonitor.Api.Test.Settings
 				{
 					Alerts = true,
 					Dashboards = true,
-					Devices = true,
+					Resources = true,
 					Reports = true,
 					Websites = true,
 					Settings = true
